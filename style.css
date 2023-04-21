@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom,
+    rgba(3, 25, 95, 0.988),
+    rgba(18, 212, 202, 0.763)), 
+    url("https://unsplash.com/pt-br/fotografias/eICUFSeirc0");
+    background-repeat: repeat-x;
+}
+
+.input-box {
+    position: relative;
+    width: 280px;
+    margin: 20px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translatey(-50%);
+    font-size: 25px;
+    color: rgba(255, 255, 255, .3);
+    padding: 0 5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+
+.input-box input {
+    width: 100%;
+    pad: 10px;
+    background: transparent;
+    border: 1.8px solid #ffffff4d;
+    outline: none;
+    border-radius: 5px;
+    font-size: 25px;
+    color: #fff;
+    transition: .5s;
+}
+
+.input-box label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-left: 1.8px solid #fffefe;
+    border-bottom: 1.8px solid #fffefe;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.input-box label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-right: 1.8px solid #fffefe;
+    border-top: 1.8px solid #fffefe;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 0;
+    bottom: -22px;
+    left: 10px;
+    font-size: 16px;
+    background: transparent;
+    color: #ffffff;
+    padding: 0 12px;
+}
+
+.input-box input:focus~label::before,
+.input-box input:valid~label::before,
+.input-box input:focus~label::after,
+.input-box input:valid~label::after {
+    top: 2.5px;
+    opacity: 1;
+}
+
+.input-box input:focus,
+.input-box:valid {
+    border: 1.8px solid rgba(232, 236, 239, 0.751);
+}
